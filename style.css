@@ -1,0 +1,34 @@
+:root {
+  --grid-cols: 1;
+  --grid-rows: 1;
+}
+
+body {
+  background: #ccc;
+}
+
+.button-container {
+  width: 200px;
+  margin: 0 auto;
+}
+
+#clean-grid {
+  width: 200px;
+  height: 3rem;
+}
+
+#container {
+  display: grid;
+  width: 960px;
+  height: 500px;
+  margin: auto;
+  margin-top: 20px;
+  background-color: #e2e2e2;
+  grid-template-columns: repeat(var(--grid-cols), 1fr);
+  grid-template-rows: repeat(var(--grid-rows), 1fr);
+  border: 1px solid black;
+}
+
+.grid-item {
+  border: 1px solid black;
+}
