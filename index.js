@@ -4,14 +4,21 @@ const gridItems = document.getElementsByClassName('grid-item');
 console.log(gridItems);
 
 let gridSize = parseInt(
-  prompt('Choose the size of the grid. Has to be NxN squares(Maximum 100):')
+  prompt('Choose the size of the grid. Has to be NxN squares(Maximum 64):')
 );
+while (gridSize > 64) {
+  gridSize = parseInt(prompt('Maximum size is 64:'));
+}
 
+// Reset the grid and ask for a new size
 buttonReset.addEventListener('click', () => {
   Array.from(gridItems).forEach((gridItem) => resetGrid(gridItem));
   gridSize = parseInt(
-    prompt('Choose the size of the grid. Has to be NxN squares(Maximum 100):')
+    prompt('Choose the size of the grid. Has to be NxN squares(Maximum 64):')
   );
+  while (gridSize > 64) {
+    gridSize = parseInt(prompt('Maximum size is 64:'));
+  }
   makeRows(gridSize, gridSize);
   addColors();
   console.log('Borrando grid');
